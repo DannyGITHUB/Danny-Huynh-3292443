@@ -13,15 +13,20 @@ int temperaturePin = 0; //the analog pin the TMP36's Vout (sense) pin is connect
  * We initialize the serial connection with the computer
  */
  
+ // This is a modification to the code, I have added a RGB LED component to the board.
+ // These variables will assign a different colour to each pin of the RGB LED.
  // LED leads connected to PWM pins
 const int RED_LED_PIN = 9;  // Sets LED pin 9 to colour red
 const int GREEN_LED_PIN = 10;  // Sets LED pin 10 to colour green
 const int BLUE_LED_PIN = 11;  // Sets LED pin 11 to colour blue
 
+// Here I have modified the original code by adding some temperature range variables
+// these variables will set a limit for temperature readings from the TMP36 component.
+
 int MaxTemp = 40;    // The max temperature range limit the sensor will peak at
 int MinTemp = 10;    // The minimum temperature range limit the sensor will peak
-int sensorValue = 0; 
-int smoothing = 4;
+int sensorValue = 0; // Value output given by the sensor
+int smoothing = 4;   // Smoothing function variable used from: http://www.arduino.cc/en/Tutorial/Smoothing
 
 void setup()
 {
@@ -46,7 +51,7 @@ void loop()                     // run over and over again
  sensorValue = ((sensorValue * smoothing) + temperature)/(smoothing+1);
  temperature = sensorValue;
  
- // At this ppint we have temperature in C
+ // At this point we have temperature in C
  // we map it to 0 to 360 hue
   // Play with the saturation and brightness values
   // to see what they do
@@ -87,7 +92,7 @@ float getVoltage(int pin){
 
 }
 
-// Following code used was sourced from Action Script;
+// The following code used below was sourced from Action Script;
 // http://www.actionscript.org/forums/showthread.php3?t=15155
 // Code functions as a converter for changing a hue, saturation and brightness 
 
