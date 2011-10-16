@@ -33,18 +33,28 @@ void draw(){
     background(255);
     image(mapImage, 0, 0);
     
-    ellipseMode(CENTER);
-    ellipse(100, 70, 100, 100);    
-    fill(200);
-   
-    ellipse(100, 200, 100, 100);    
-    fill(100);
+    //fill(200);
+    textSize(20);
+    text(tempVal1, 169, 140);
     
-    ellipse(100, 320, 100, 100);
-    fill(50);  
+    textSize(20);
+    text(tempVal2, 169, 250);
+    
+    textSize(20);
+    text(tempVal3, 169, 390);
+    
+    ellipseMode(CENTER);
+    
+    ellipse(100, 70, 100, 100);    // Top circle
+    fill(200);
+    
+    ellipse(100, 200, 100, 100);    // Middle Circle
+   // fill(180);
+   
+    ellipse(100, 320, 100, 100);    // Bottom Circle  
+    //fill(220);
 }
 
 void onReceiveRequest(DataOut d){
     p.updateLocalSensors(d);
 }
-
