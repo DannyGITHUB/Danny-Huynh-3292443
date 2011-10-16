@@ -25,7 +25,9 @@ void draw(){
    float tempVal3 = p.localSensor[2].value;
    
     print(tempVal1);
+    print(",");
     print(tempVal2);
+    print(",");
     println(tempVal3);
    
     background(255);
