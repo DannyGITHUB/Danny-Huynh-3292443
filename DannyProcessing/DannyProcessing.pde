@@ -1,3 +1,8 @@
+// Processing sketch visualisation for ARCH1190
+// Written by Danny Huynh, 3292443, UNSW
+// In relation to Arduino based RGB LED Surface Project.
+// All functions and code used was sourced from: http://processing.org/reference/
+
 PImage mapImage;
 import processing.serial.*;
 import cc.arduino.*;
