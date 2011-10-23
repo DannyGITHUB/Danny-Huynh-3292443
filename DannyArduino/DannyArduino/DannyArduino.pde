@@ -5,26 +5,17 @@
 
 #include <Firmata.h>
 
-//int totalPins = 16;
-
 //TMP36 Pin Variables
 int temperaturePin = 0; //the analog pin the TMP36's Vout (sense) pin is connected to
                         //the resolution is 10 mV / degree centigrade 
                         //(500 mV offset) to make negative temperatures an option
                         
 int temperaturePinTwo = 1; //the second analog pin TMP36's Vout (sense) pin is connected to
-                           //the resolution is 10mV / degree centigrade
-                           //(500 mV offset) to make negative temperatures an option
                            
 int temperaturePinThree = 2; //the third analog pin TMP36's Vout (sense) pin is connected to
-                             //the resolution is 10mV / degree centigrade
-                             //(500 mV offset) to make negative temperatures an option
 
-/*
- * setup() - this function runs once when you turn your Arduino on
- * We initialize the serial connection with the computer
- */
- 
+
+
 // LED leads connected to PWM pins
 const int RED_LED_PIN = 9;  // Sets LED pin 9 to colour red
 const int GREEN_LED_PIN = 10;  // Sets LED pin 10 to colour green
@@ -155,6 +146,7 @@ delay(500);
  * getVoltage() - returns the voltage on the analog input defined by
  * pin
  */
+ 
 float getVoltage(int pin){
  return (analogRead(pin) * .004882814); //converting from a 0 to 1024 digital range
                                         // to 0 to 5 volts (each 1 reading equals ~ 5 millivolts
